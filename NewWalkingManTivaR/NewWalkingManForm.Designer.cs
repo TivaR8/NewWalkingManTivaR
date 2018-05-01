@@ -50,6 +50,7 @@
             this.lblInstructions.Size = new System.Drawing.Size(199, 13);
             this.lblInstructions.TabIndex = 1;
             this.lblInstructions.Text = "Click on a picture to make the man walk.";
+            this.lblInstructions.Visible = false;
             // 
             // frmNewWalkingMan
             // 

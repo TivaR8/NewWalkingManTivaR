@@ -7,6 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+/*
+ * Created by: Tiva Rait
+ * Created on: 01-05-2018
+ * Created for: ICS3U Programming
+ * Daily Assignment – Day #32 - New Walking Man
+ * This program let's you click four boxes and has walking man move.
+*/
 
 namespace NewWalkingManTivaR
 {
@@ -68,7 +76,61 @@ namespace NewWalkingManTivaR
 
             // Write a message to the console to check which picture box was clicked
             Console.WriteLine("Picture box (" + tmpPicMan.Location.X + ", " + tmpPicMan.Location.Y + ") was clicked.");
-            
+
+            // Declare local variables and constants
+            const byte MAX_FRAMES = 10;
+            int pictureFrameCounter = 1;
+
+            // Continue this frame loop while the frame counter has not reached the max number of frames we have to display
+            while (pictureFrameCounter < MAX_FRAMES + 1)
+            {
+                if (pictureFrameCounter == 1)
+                {
+                    tmpPicMan.Image = Properties.Resources.walk1;
+                }
+                else if (pictureFrameCounter == 2)
+                {
+                    tmpPicMan.Image = Properties.Resources.walk2;
+                }
+                else if (pictureFrameCounter == 3)
+                {
+                    tmpPicMan.Image = Properties.Resources.walk3;
+                }
+                else if (pictureFrameCounter == 4)
+                {
+                    tmpPicMan.Image = Properties.Resources.walk4;
+                }
+                else if (pictureFrameCounter == 5)
+                {
+                    tmpPicMan.Image = Properties.Resources.walk5;
+                }
+                else if (pictureFrameCounter == 6)
+                {
+                    tmpPicMan.Image = Properties.Resources.walk6;
+                }
+                else if (pictureFrameCounter == 7)
+                {
+                    tmpPicMan.Image = Properties.Resources.walk7;
+                }
+                else if (pictureFrameCounter == 8)
+                {
+                    tmpPicMan.Image = Properties.Resources.walk8;
+                }
+                else if (pictureFrameCounter == 9)
+                {
+                    tmpPicMan.Image = Properties.Resources.walk9;
+                }
+                else
+                {
+                    tmpPicMan.Image = Properties.Resources.walk10;
+                }
+                // To increment counter
+                pictureFrameCounter++;
+                // To add the delay so it won't be too quick
+                this.Refresh();
+                Thread.Sleep(100);
+            }
+        
         }
     }
 }
